@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+    {{forms.as_table}}
+    <input type="submit" value="Sumit">
+    <input type="reset" value="Clear">
+    </form>
+    <hr>
+    <table>
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+        </thead>
+        <tbody>
+    {% for employee in employees  %}
+        <tr>
+            <td>{{employee.first_name}}</td>
+            <td>{{employee.last_name}}</td>
+            <td>{{employee.dob}}</td>
+        </tr>
+    {% endfor %}
+</tbody>
+</table>
+</body>
+</html>
